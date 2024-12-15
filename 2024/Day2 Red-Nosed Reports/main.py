@@ -61,8 +61,8 @@ def Red_nosed_Reports():
 
 def Red_nosed_Reports2():
     total_safe = 0
-    with open("unusual data test") as data:
-        l = 0
+    with open("2024/Day2 Red-Nosed Reports/unusual data") as data:
+        
         for report in data:
             list_numbers = []
             for x in report.split():
@@ -71,6 +71,42 @@ def Red_nosed_Reports2():
             print(list_numbers)
 
             
+            if len(set(list_numbers)) == len(list_numbers):
+                print("No dubble number")
+                
+                sorted_list = list(list_numbers)
+                sorted_list.sort()
+                print(sorted_list)
+
+                if list_numbers[0] == sorted_list[0]:
+                    print("Start SMALL number")
+                    y = list_numbers[0] -1
+                    for x in list_numbers:
+                        if x > y+3:
+                            print("Not safe")
+                            break
+                        y = x
+                    # if x == list_numbers[-1]:
+                    #     print("Safe")
+                    #     total_safe += 1
+
+                elif list_numbers[0] == sorted_list[-1]:
+                    print("Start BIG number")
+                    y = list_numbers[0] +1
+                    for x in list_numbers:
+                        if x < y-3:
+                            print("Not safe")
+                            break
+                        y = x
+                    # if x == list_numbers[-1]:
+                    #     print("Safe")
+                    #     total_safe += 1
+                    
+            else:  
+                print("Dubble number")
+                print("Not safe")
+            print("Total_safe:", total_safe)
+
 
     return total_safe
 
