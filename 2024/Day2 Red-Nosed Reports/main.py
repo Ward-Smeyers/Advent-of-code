@@ -82,25 +82,25 @@ def Red_nosed_Reports2():
                     print("Start SMALL number")
                     y = list_numbers[0] -1
                     for x in list_numbers:
-                        if x > y+3:
+                        if y > x or x > y+3:
                             print("Not safe")
                             break
+                        elif x == list_numbers[-1]:
+                            print("Safe")
+                            total_safe += 1
                         y = x
-                    # if x == list_numbers[-1]:
-                    #     print("Safe")
-                    #     total_safe += 1
 
                 elif list_numbers[0] == sorted_list[-1]:
                     print("Start BIG number")
                     y = list_numbers[0] +1
                     for x in list_numbers:
-                        if x < y-3:
+                        if y < x or x < y-3:
                             print("Not safe")
                             break
+                        elif x == list_numbers[-1]:
+                            print("Safe")
+                            total_safe += 1
                         y = x
-                    # if x == list_numbers[-1]:
-                    #     print("Safe")
-                    #     total_safe += 1
                     
             else:  
                 print("Dubble number")
